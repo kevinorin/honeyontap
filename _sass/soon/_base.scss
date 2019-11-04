@@ -1,6 +1,5 @@
 /* Basic styling */
 html {
-    background-color: $background-color;
     font-size: $base-font-size;
     -moz-osx-font-smoothing: grayscale;
      -webkit-font-smoothing: antialiased;
@@ -9,20 +8,13 @@ html {
     overflow-y: scroll;
 }
 
-body {
-    background: url("images/pexels-honey-461099.jpg") center center no-repeat;
-    background-size: cover;
-    height: 100vh;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-}
-
 article, header, footer, section { display: block; }
 
 body, button, input, select, textarea { font-family: $base-font-family; }
 
 body {
+    background: rgb(175,131,27);
+    background: radial-gradient(circle, rgba(175,131,27,1) 56%, rgba(255,174,0,1) 100%);
     color: $text-color;
     font-size: 1rem;
     font-weight: $base-font-weight;

@@ -1,14 +1,35 @@
 <section class="section subscribe">
-    <h2>Subscribe to updates</h2>
-    <form action="{{ subscribe.action }}" method="post">
+    <h2>Subscribe for updates</h2>
+    <form id="form-contact" name="submit-to-google-sheet">
         <div class="field has-addons">
             <div class="control is-expanded">
-                <input type="email" name="email" placeholder="Email" class="input">
+                <input type="email" name="email" placeholder="Email" class="input" required>
+            </div>
+            <div class="control is-expanded">
+                <input type="phone" name="phone" placeholder="Phone" class="input" required>
             </div>
             <div class="control">
-                <input type="submit" value="Subscribe" class="button is-primary">
+                <button type="submit" class="button is-primary submit-button" id="submit-button">Submit</button>
             </div>
         </div>
     </form>
-    <p>We will never share your address.</p>
 </section>
+
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwBhJmLGa5xKIVb4dMr9HZUj20Ji_nB2l6RJj23pxe7NU9hQBtS/exec'
+    const form = document.forms['submit-to-google-sheet']
+
+    form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+    })
+
+    document.getElementById('form-contact').addEventListener('submit',function(){
+        var button = document.getElementById('submit-button');
+        button.innerText = 'Message Sent';
+        button.disabled = e;
+    });
+</script>

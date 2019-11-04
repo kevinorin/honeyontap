@@ -34,16 +34,22 @@
                     <div class="subsection content">
                         {{ content }}
                     </div>
+
+                    <div class="subscriebe">
+                        {% if site.subscribe %}
+                            {% include subscribe.html %}
+                        {% endif %}
+                    </div>
                 </section>
+
+
 
                <!--
                 {% if site.countdown %}
                     {% include countdown.html %}
                 {% endif %}
 
-                {% if site.subscribe %}
-                    {% include subscribe.html %}
-                {% endif %}
+                
 
                 {% if site.social %}
                     {% include social.html %}
