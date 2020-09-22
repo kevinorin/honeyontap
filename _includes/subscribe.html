@@ -1,22 +1,13 @@
 <section class="section subscribe">
-    <h2>Sign up for updates, your complimentary ‘birday’ treat & tour, magic & more!</h2>
+    <h2>Subscribe for updates</h2>
     <form id="form-contact" name="submit-to-google-sheet">
         <div class="field has-addons">
-            <div class="control is-expanded">
-                <input type="text" name="firstname" placeholder="First name (required)" class="input" required>
-            </div>
-            <div class="control is-expanded">
-                <input type="text" name="lastname" placeholder="Last name" class="input">
-            </div>
             <div class="control is-expanded">
                 <input type="email" name="email" placeholder="Email (required)" class="input" required>
             </div>
 
             <div class="control is-expanded">
                 <input type="phone" name="phone" placeholder="Phone (optional)" class="input">
-            </div>
-            <div class="control is-expanded">
-                <input type="text" name="comments" placeholder="Your message" class="input">
             </div>
             <div class="control">
                 <button type="submit" class="button is-primary submit-button" id="submit-button">Submit</button>
@@ -25,9 +16,6 @@
         </div>
     </form>
 </section>
-
-
-<!-- https://script.google.com/macros/s/AKfycbwBhJmLGa5xKIVb4dMr9HZUj20Ji_nB2l6RJj23pxe7NU9hQBtS/exec 
 
 
 <script>
@@ -46,22 +34,4 @@
         button.innerText = 'Message Sent';
         button.disabled = e;
     });
-</script>
--->
-
-<script>
-    var $form = $('form#form-contact'),
-    url = 'https://script.google.com/macros/s/AKfycby84yJQ9ZW8KfcrOEWUMElp3XsL1tan9hpID_aOL-ZENZAAhfw/exec'
-
-    $('#submit-button').on('click', function(e) {
-      e.preventDefault();
-      var jqxhr = $.ajax({
-        url: url,
-        method: "GET",
-        dataType: "json",
-        data: $form.serializeObject()
-      }).success(
-        // do something
-      );
-    })
 </script>
